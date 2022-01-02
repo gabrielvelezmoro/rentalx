@@ -17,7 +17,7 @@ class SpecificationsRepository implements ISpecificationsRepository {
     return specification;
   }
   list(): Specification[] {
-    throw new Error("Method not implemented.");
+    return this.specifications;
   }
   create({ name, description }: ICreateSpecificationDTO): void {
     const specification = new Specification();
