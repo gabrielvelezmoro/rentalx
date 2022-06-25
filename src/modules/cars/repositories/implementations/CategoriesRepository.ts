@@ -3,6 +3,7 @@ import {
   ICategoriesRepository,
   ICreateCategoryDTO,
 } from "../ICategoriesRepository";
+import { Repository } from "typeorm";
 class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[] = [];
 
