@@ -5,7 +5,6 @@ import {
 } from "../ICategoriesRepository";
 import { getRepository, Repository } from "typeorm";
 class CategoriesRepository implements ICategoriesRepository {
-  
   private repository: Repository<Category>;
 
 
@@ -13,7 +12,7 @@ class CategoriesRepository implements ICategoriesRepository {
     this.repository = getRepository(Category)
   }
 
-  
+
   async create({ description, name }: ICreateCategoryDTO): Promise<void> {
     const category = await this.repository.create({
       description,
