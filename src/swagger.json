@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "RentalX Documentation",
+        "title": "RentX Documentation",
         "description": "this is an API Rent",
         "version": "1.0.0",
         "contact": {
@@ -18,7 +18,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "type": "Object",
+                                "type": "object",
                                 "properties": {
                                     "name": {
                                         "type": "string"
@@ -56,7 +56,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "type":"Object",
+                                        "type":"object",
                                         "properties": {
                                             "name": {
                                                 "type": "string"
@@ -76,6 +76,42 @@
                 }
             }
         }
+    },
+        "/specifications": {
+            "post": {
+                "tags": ["Specifications"],
+                "summary":"create new specification",
+                "requestBody": {
+                    "content":{
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/Specification"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Specification already exists"
+                    }
+            }
     }
+}
+},
+"definitions":{
+    "Specification": {
+        "type":"object",
+        "properties": {
+            "name": {
+                "type": "string"
+            },
+            "description": {
+                "type": "string"
+            }
+        } 
     }
+}
 }
